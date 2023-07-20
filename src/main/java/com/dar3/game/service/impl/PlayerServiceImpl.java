@@ -313,7 +313,6 @@ public class PlayerServiceImpl implements PlayerService {
 
     // 5. Is date correct?
     private Boolean isBirthdayCorrect(Player player) {
-//TODO check on mistake to precise Date min in milliseconds 2000 and 3000 years. Use Date()
         // If date < 1970 year - throw exception
         if (player.getBirthday().getTime() < 0) {
             throw new BadRequestException();
