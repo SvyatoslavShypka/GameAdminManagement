@@ -15,7 +15,7 @@ public interface PlayerService {
                                    Integer minLevel, Integer maxLevel);
 
     // Get list with Pagination.
-    List<Player> getPlayersForPage(List<Player> sortAllShips, PlayerOrder order,
+    List<Player> getPlayersForPage(List<Player> sortAllPlayers, PlayerOrder order,
                                    Integer pageNumber, Integer pageSize);
 
     //  Create new Player

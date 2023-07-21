@@ -1,9 +1,9 @@
-CREATE DATABASE IF NOT EXISTS rpg
+CREATE DATABASE IF NOT EXISTS game
     COLLATE utf8mb4_unicode_ci;
 CREATE DATABASE IF NOT EXISTS test
     COLLATE utf8mb4_unicode_ci;
 
-USE rpg;
+USE game;
 
 DROP TABLE IF EXISTS player;
 

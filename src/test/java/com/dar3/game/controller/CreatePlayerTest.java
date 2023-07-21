@@ -68,7 +68,7 @@ public class CreatePlayerTest extends AbstractTest {
                         .content(TestsHelper.BANNED_TRUE_JSON))
                 .andExpect(status().isOk());
 
-        PlayerInfoTest expected = new PlayerInfoTest(29L, "JustCreated", "NewTitle", Race.ALIEN, Profession.MAGICIAN, 988059600000L, true, 63986, 35, 2614);
+        PlayerInfoTest expected = new PlayerInfoTest(29L, "Testname", "Testtitle", Race.HUMAN, Profession.SHOOTER, 988059600000L, true, 63986, 35, 2614);
         String contentAsString = resultActions.andReturn().getResponse().getContentAsString();
         PlayerInfoTest actual = new ObjectMapper().readValue(contentAsString, PlayerInfoTest.class);
         assertEquals("Wrong result during creating player", expected, actual);

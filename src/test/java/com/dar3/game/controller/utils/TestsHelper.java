@@ -49,7 +49,6 @@ public class TestsHelper {
                     "\"name\": \"\"," +
                     "\"title\":\"Testtitle\"," +
                     "\"race\": \"HUMAN\"," +
-                    "\"profession\": \"HUMAN\"," +
                     "\"profession\": \"SHOOTER\"," +
                     "\"birthday\" : 988059600000," +
                     "\"banned\":false," +
@@ -103,7 +102,7 @@ public class TestsHelper {
             "{" +
                     "\"name\": \"Testname\"," +
                     "\"title\":\"Testtitle\"," +
-                    "\"race\": \"DWARF\"," +
+                    "\"race\": \"HUMAN\"," +
                     "\"profession\": \"SHOOTER\"," +
                     "\"birthday\" : 988059600000," +
                     "\"banned\":true," +
@@ -113,7 +112,7 @@ public class TestsHelper {
     public static final String JSON_SKELETON =
             "{" +
                     "\"name\": \"%s\"," +
-                    "\"Banned\":%s," +
+                    "\"banned\":%s," +
                     "\"experience\": %s" +
                     "}";
 
@@ -125,7 +124,7 @@ public class TestsHelper {
                     "\"birthday\": %s" +
                     "}";
 
-    private List<PlayerInfoTest> allPlayers = new ArrayList<>();
+    private final List<PlayerInfoTest> allPlayers = new ArrayList<>();
 
     public TestsHelper() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -297,9 +296,9 @@ public class TestsHelper {
         return allPlayers.stream().filter(s -> s.id == id).findFirst().orElse(null);
     }
 
-    public List<PlayerInfoTest> setPlayer(PlayerInfoTest player) {
+    public void setPlayer(PlayerInfoTest player) {
         this.allPlayers.add(player.getId().intValue()-1, player);
-        return allPlayers;
+//        return allPlayers;
     }
 }
 

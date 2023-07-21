@@ -57,7 +57,7 @@ public class GetAllTest extends AbstractTest {
     //test3
     @Test
     public void getAllWithFiltersTitlePageSize() throws Exception {
-        ResultActions resultActions = mockMvc.perform(get("/rest/players?title=ой&pageSize=4"))
+        ResultActions resultActions = mockMvc.perform(get("/rest/players?title=ame&pageSize=4"))
                 .andExpect(status().isOk());
 
         MvcResult result = resultActions.andReturn();
@@ -65,7 +65,7 @@ public class GetAllTest extends AbstractTest {
 
         List<PlayerInfoTest> actual = mapper.readValue(contentAsString, typeReference);
         List<PlayerInfoTest> expected = testsHelper.getPlayerInfosByPage(0, 4,
-                testsHelper.getPlayerInfosByTitle("ой", testsHelper.getAllPlayers()));
+                testsHelper.getPlayerInfosByTitle("ame", testsHelper.getAllPlayers()));
 
         assertEquals("Wrong result during request GET /rest/players with parameters title and pageSize.", expected, actual);
     }

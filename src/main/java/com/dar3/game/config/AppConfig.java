@@ -31,7 +31,7 @@ public class AppConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.game.entity");
+        em.setPackagesToScan("com.dar3.game.entity");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -45,7 +45,7 @@ public class AppConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/rpg?serverTimezone=UTC");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/game?serverTimezone=UTC");
         dataSource.setUsername("root");
         dataSource.setPassword("12345");
         return dataSource;

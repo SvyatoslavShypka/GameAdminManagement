@@ -22,7 +22,7 @@ public class GetPlayerTest extends AbstractTest {
     //test2
     @Test
     public void getPlayerByIdNotNumberTest() throws Exception {
-        mockMvc.perform(get("/rest/players/test"))
+        mockMvc.perform(get("/rest/players/NotNumber"))
                 .andExpect(status().isBadRequest());
     }
 

@@ -143,9 +143,8 @@ public class UpdatePlayerTest extends AbstractTest {
     @Test
     public void updatePlayerWithDataTest1() throws Exception {
         PlayerInfoTest playerInfoTest = testsHelper.getPlayerInfosById(14);
-        System.out.println("Was: " + playerInfoTest);
         String newName = "TestName";
-        boolean newBanned = false;
+        boolean newBanned = true;
         int newExperience = 2500;
 
         PlayerInfoTest expected = new PlayerInfoTest(playerInfoTest.id, newName, playerInfoTest.title, playerInfoTest.race, playerInfoTest.profession,
@@ -158,11 +157,6 @@ public class UpdatePlayerTest extends AbstractTest {
 
         String contentAsString = resultActions.andReturn().getResponse().getContentAsString();
         PlayerInfoTest actual = mapper.readValue(contentAsString, PlayerInfoTest.class);
-        System.out.println("Expected: " + expected);
-        System.out.println("Actual: " + actual);
-//        testsHelper.setPlayer(actual);
-
-        System.out.println(testsHelper.getPlayerInfosById(14));
 
         assertEquals("During request POST /rest/players/{id} player has to be updated" +
                         "and level and UntilNextlevel have to be recalculated", expected, actual);
@@ -171,9 +165,7 @@ public class UpdatePlayerTest extends AbstractTest {
     //test11
     @Test
     public void updatePlayerWithDataTest2() throws Exception {
-        PlayerInfoTest playerInfoTest = testsHelper.getPlayerInfosById(32);
-        System.out.println("Tested player: " + playerInfoTest);
-
+        PlayerInfoTest playerInfoTest = testsHelper.getPlayerInfosById(20);
         String newTitle = "TestName";
         Race newRace = Race.ALIEN;
         Profession newProfession = Profession.SHOOTER;
@@ -190,11 +182,7 @@ public class UpdatePlayerTest extends AbstractTest {
         String contentAsString = resultActions.andReturn().getResponse().getContentAsString();
         PlayerInfoTest actual = mapper.readValue(contentAsString, PlayerInfoTest.class);
 
-        System.out.println("Expected: " + expected);
-        System.out.println("Actual: " + actual);
         testsHelper.setPlayer(actual);
-
-        System.out.println(testsHelper.getPlayerInfosById(14));
 
         assertEquals("In request POST /rest/players/{id} player has to be updated, Level & UntilNextLevel have to be re-calculated", expected, actual);
     }

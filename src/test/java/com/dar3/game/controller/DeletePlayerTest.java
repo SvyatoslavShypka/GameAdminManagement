@@ -18,7 +18,7 @@ public class DeletePlayerTest extends AbstractTest {
     //test2
     @Test
     public void deletePlayerByIdNotNumberTest() throws Exception {
-        mockMvc.perform(delete("/rest/players/test"))
+        mockMvc.perform(delete("/rest/players/NotNumber"))
                 .andExpect(status().isBadRequest());
     }
 

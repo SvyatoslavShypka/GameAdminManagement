@@ -40,7 +40,6 @@ function loadContent(root, suffix, currentPage) {
         let td8 = document.createElement("td");
         let birthday = new Date();
         birthday.setTime(objects[i].birthday);
-        // td8.appendChild(document.createTextNode(birthday.toLocaleDateString()));
         td8.appendChild(document.createTextNode(birthday.toLocaleDateString()));
         tr.appendChild(td8);
         let banned;
@@ -259,7 +258,7 @@ function editButtonClick(root, element, id) {
     raceInput.setAttribute("class", "form-control input-sm");
     raceInput.setAttribute("id", "updateRace" + objectToUpdate.id);
     raceInput.setAttribute("style", "font-family:monospace");
-    let race = ["Human", "Dwarf", "Elf", "Giant", "Orc", "Troll", "Hobbit"];
+    let race = ["Human", "Animal", "Alien", "Hobbit"];
     for (let i = 0; i < race.length; i++) {
         let option = document.createElement("option");
         if (race[i].toUpperCase() === objectToUpdate.race.toUpperCase()) {
@@ -276,7 +275,7 @@ function editButtonClick(root, element, id) {
     professionInput.setAttribute("class", "form-control input-sm");
     professionInput.setAttribute("id", "updateProfession" + objectToUpdate.id);
     professionInput.setAttribute("style", "font-family:monospace");
-    let profession = ["Warrior", "Rogue", "Sorcerer", "Cleric", "Paladin", "Nazgul", "Warlock", "Druid"];
+    let profession = ["Warrior", "Explorer", "Magician", "Shooter"];
     for (let i = 0; i < profession.length; i++) {
         let option = document.createElement("option");
         if (profession[i].toUpperCase() === objectToUpdate.profession.toUpperCase()) {
